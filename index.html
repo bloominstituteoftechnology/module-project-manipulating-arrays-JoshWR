@@ -54,6 +54,15 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
+      let results = []
+      let splitString = str.split('');
+      for(let idx in splitString){
+        let char = splitString[idx]
+        if(char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u' ){
+          results[results.length] = char;
+        }
+      }
+    return results.join('') 
 
     }
 
@@ -62,7 +71,23 @@
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
+    function sumNumsWhile(nums) {
+      let results = 0;
+      let idx = 0;
+      while (idx < nums.length) {
+        let element = nums[idx]
+
+      if(typeof element === 'number'){
+        if(element === 13){
+          return "I'm too superstitious!"
+        }
+        results += element
+      }
+        idx++
+      }
+      
+      return results
+
 
     }
 
