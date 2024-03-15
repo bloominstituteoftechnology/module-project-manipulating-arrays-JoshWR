@@ -147,9 +147,20 @@
     // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
     // 🧠 Examples of usage:
     // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
-    function separateAges() {
+    function separateAges(ages) {
+      let others = []
+      let under21 = []
       
+      for( let idx = 0; idx < ages.length; idx++) {
+        let element = ages[idx];
+        if(element < 21){
+          under21.push(element)
+        } else if (element >= 21) {
+          others.push(element)
+        }
+      }
 
+      return [under21, others]
     }
 
     // 👉 CHALLENGE 7
@@ -159,7 +170,11 @@
     // 🧠 The "tail" prop contains an array holding the elements of the array after the first one.
     // 🧠 Examples of usage:
     // headAndTail([1, 2, 3]) // should return { head: 1, tail: [2, 3] }
-    function headAndTail() {
+    function headAndTail(arr) {
+      let head = arr[0];
+      let tail = arr.slice(1);
+      return {head: head, tail: tail}
+      
 
     }
 
