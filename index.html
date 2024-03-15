@@ -56,10 +56,10 @@
     function stripVowels(str) {
       let results = []
       let splitString = str.split('');
-      for(let idx in splitString){
+      for(let idx = 0; idx < splitString.length; idx++){
         let char = splitString[idx]
         if(char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u' ){
-          results[results.length] = char;
+          results.push(char);
         }
       }
     return results.join('') 
@@ -108,7 +108,16 @@
     // 🧠 There are many ways to solve this, but practice using a while loop.
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-    function fightMonsters() {
+    function fightMonsters(lifePoints) {
+      let round = 1;
+      while(lifePoints > 0) {
+        lifePoints -= round
+        if(lifePoints <= 0) {
+          return `You died in round ${round}`;
+        }
+        round++
+      }
+
 
     }
 
@@ -119,7 +128,15 @@
     // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
     // ❗ Notes:
     // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
-    function findEvenNums() {
+    function findEvenNums(arr) {
+      let result = [];
+      for( let idx = 0; idx < arr.length; idx++){
+        let nums = arr[idx];
+        if(nums % 2 === 0 ){
+          result.push(nums)
+        }
+      }
+      return result
 
     }
 
@@ -131,6 +148,7 @@
     // 🧠 Examples of usage:
     // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
     function separateAges() {
+      
 
     }
 
